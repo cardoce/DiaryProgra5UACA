@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-4 card">
+      <article class="card-body">
+      <h4 class="card-title mb-4 mt-1">Nombre de la historia</h4>
+      <p> Contenido </p>
+      </article>
+    </div>
+    <div class="col-6">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= image_tag( "chicago.jpg", :class => "d-block w-100")%>
+            <div class="carousel-caption d-none d-md-block">
+          <h5>Mi primer concierto</h5>
+          <p>Una experiencia unica en Chicago</p>
+        </div>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag( "la.jpg", :class => "d-block w-100")%>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag( "ny.jpg", :class => "d-block w-100")%>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-1">
+    </div>
+  </div>
+</div>

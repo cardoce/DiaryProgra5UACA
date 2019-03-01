@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Event.create(name: 'Ejemplo Evento',event_date: Date.today, event_picture_url: 'la.jpg', descritption: 'Contenido de la historia')
