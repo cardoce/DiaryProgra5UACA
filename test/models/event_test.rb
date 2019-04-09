@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class EventTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  describe Event do
+    it { should belong_to :user}
+  end
 end
