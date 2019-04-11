@@ -1,6 +1,36 @@
 <% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to "Log Out", logout_path %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-4 card">
+      <article class="card-body">
+        <%= image_tag( "profile.jpg", :class => "rounded mx-auto d-block")%>
+        <br>
+        <p class="mb-1"><%= current_user.email%></p>
+    </article>
+    </div>
+    <div class="col-5 card">
+      <article class="card-body">
+        <div class="list-group">
+        <% @events.each do |event| %>
+          <a href="../events/1" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><%= event.name %></h5>
+              <small><%= event.event_date %></small>
+            </div>
+            <p class="mb-1"><%= event.descritption %></p>
+          </a>
+          <% end %>
+        </div>
+    </article>
+    </div>
+
+    <div class="col-1">
+    </div>
+  </div>
+</div>
 <% else %>
   <%= link_to "Sign Up", signup_path %> or 
   <%= link_to "Log In", login_path %>
