@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar-header">
   <a class="navbar-brand" href="..">Diario</a>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -16,4 +16,18 @@
       </li> -->
     </ul>
   </div>
-</nav
+</nav>
+
+<script>
+var navHeader = document.getElementById("navbar-header");
+var links = navHeader.getElementsByClassName("nav-item");
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
+</script>
