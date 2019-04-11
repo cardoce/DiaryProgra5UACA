@@ -1,21 +1,37 @@
-<%= form_for @event do |f| %>
+
+
+<p id="alert"><%= alert %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-12 card">
+      <article class="card-body">
+      <h4 class="card-title mb-4 mt-1">Crear Evento</h4>
+        <%= form_for @event do |f| %>
 
     <div class="field">
       <%= f.label :name %>
-      <%= f.text_field :name, id: :name %>
+      <%= f.text_field :name, id: :name, class: 'form-control'%>
     </div>
   
     <div class="field">
       <%= f.label :event_date%>
-      <%= f.date_field :event_date, id: :event_date %>
+      <%= f.date_field :event_date, id: :event_date, class: 'form-control' %>
     </div>
   
     <div class="field">
       <%= f.label :descritption %>
-      <%= f.text_field :descritption, id: :descritption%>
+      <%= f.text_field :descritption, id: :descritption, class: 'form-control'%>
     </div>
   
-  
-      <%= f.submit %>
+  <br>
+      <%= f.submit "Crear Evento", class:"btn btn-primary btn-block"%>
     
   <% end %>
+      </article>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
