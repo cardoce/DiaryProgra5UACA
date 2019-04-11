@@ -1,3 +1,4 @@
+<% if current_user %>
 
 <div class="container">
   <div class="row">
@@ -5,52 +6,33 @@
     </div>
     <div class="col-4 card">
       <article class="card-body">
-      <a href="" class="float-right btn btn-outline-primary">Sign up</a>
-      <h4 class="card-title mb-4 mt-1">Sign in</h4>
-         <form>
-          <div class="form-group">
-            <label>Email</label>
-              <input name="" class="form-control" placeholder="Email" type="email">
-          </div> <!-- form-group// -->
-          <div class="form-group">
-            <a class="float-right" href="#">Olvido la contraseña?</a>
-            <label>Contraseña</label>
-              <input class="form-control" placeholder="******" type="password">
-          </div> <!-- form-group// -->
-          <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block"> Login  </button>
-          </div> <!-- form-group// -->
-      </form>
-      </article>
+        <%= image_tag( "profile.jpg", :class => "rounded mx-auto d-block")%>
+        <br>
+        <p class="mb-1"><%= current_user.email%></p>
+    </article>
     </div>
-    <div class="col-6">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= image_tag( "chicago.jpg", :class => "d-block w-100")%>
-            <div class="carousel-caption d-none d-md-block">
-          <h5>Mi primer concierto</h5>
-          <p>Una experiencia unica en Chicago</p>
+    <div class="col-5 card">
+      <article class="card-body">
+        <div class="list-group">
+        <% @events.each do |event| %>
+          <a href="../events/1" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><%= event.name %></h5>
+              <small><%= event.event_date %></small>
+            </div>
+            <p class="mb-1"><%= event.descritption %></p>
+          </a>
+          <% end %>
         </div>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag( "la.jpg", :class => "d-block w-100")%>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag( "ny.jpg", :class => "d-block w-100")%>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+    </article>
     </div>
+
     <div class="col-1">
     </div>
   </div>
 </div>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or 
+  <%= link_to "Log In", login_path %>
+<% end %>
+<p id="notice"><%= notice %></p>

@@ -1,0 +1,21 @@
+<%= form_for @event do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, id: :name %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :event_date%>
+      <%= f.date_field :event_date, id: :event_date %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :descritption %>
+      <%= f.text_field :descritption, id: :descritption%>
+    </div>
+  
+  
+      <%= f.submit %>
+    
+  <% end %>

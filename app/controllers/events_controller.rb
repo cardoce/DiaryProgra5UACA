@@ -1,9 +1,24 @@
 class EventsController < ApplicationController
   def index
+    @events = Event.where(user_id: current_user.id)
   end
   def new
     @event = Event.new
+
+  end
+  def create
+    @event = Event.new(event_parms)
+    @event.user = current_user if current_user
+    if @event.save
+     redirect_to @event
+    else
+     render 'new'
+    end
   end
   def show
+  end
+  private
+  def event_parms
+    params.require(:event).permit(:user_id, :name, :event_date, :event_picture_url, :descritption)
   end
 end
