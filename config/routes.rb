@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get 'welcome/login'
   get 'welcome/profile'
   root 'sessions#new'
-  resources :events
+  resources :events do
+    collection do
+      get 'publicindex'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

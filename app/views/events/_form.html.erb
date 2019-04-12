@@ -24,6 +24,11 @@
       <%= f.label :descritption %>
       <%= f.text_area :descritption, id: :descritption, class: 'form-control'%>
     </div>
+
+    <div class="field">
+      <%= f.label :public %>
+      <%= f.check_box :public, id: :public, class: "checkbox"%>
+    </div>
   
   <br>
       <%= f.submit "Crear Evento", class:"btn btn-primary btn-block"%>
