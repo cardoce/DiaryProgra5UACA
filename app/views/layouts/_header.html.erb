@@ -2,6 +2,8 @@
   <a class="navbar-brand" href="..">Diario</a>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+
+      <%if (current_user)%>
       <li class="nav-item" id= "nav-events">
         <a class="nav-link" href="../events">Historias<span class="sr-only">(current)</span></a>
       </li>
@@ -11,9 +13,14 @@
       <li class="nav-item" id= "nav-profile">
         <a class="nav-link" href="../welcome/profile">Perfil</a>
       </li>
-      <!-- <li class="nav-item ">
-        <button type="button" class="btn btn-outline-primary " onclick="location.href='../welcome/login'">Log in</button>
-      </li> -->
+      <li class="nav-item ">
+        <button type="button" class="btn btn-outline-primary " onclick="location.href='../logout'">Log out</button>
+      </li> 
+      <%else %>
+      <li class="nav-item ">
+        <button type="button" class="btn btn-outline-primary " onclick="location.href='../login'">Log in</button>
+      </li> 
+      <%end%>
     </ul>
   </div>
 </nav>

@@ -1,32 +1,42 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<p id="alert"><%= alert %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <div class="col-6 card">
+      <article class="card-body">
+      <a href="../signup" class="float-right btn btn-outline-primary">Sign up</a>
+      <h4 class="card-title mb-4 mt-1">Sign in</h4>
+      <%= form_with(model: user, local: true) do |form| %>
+          <div class="field">
+            <%= form.label :name%>
+            <%= form.text_field :name, id: :name, class: 'form-control'  %>
+          </div>
+          <div class="field">
+            <%= form.label :lastname %>
+            <%= form.text_field :lastname, id: :user_user_lastname, class: 'form-control' %>
+          </div>
+          <div class="field">
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :user_email, class: 'form-control' %>
+          </div>
+          <div class="field">
+            <%= form.label :password %>
+            <%= form.password_field :password, id: :user_password, class: 'form-control' %>
+          </div>
+            <div class="field">
+            <%= form.label :password_confirmation %>
+            <%= form.password_field :password_confirmation, id: :user_password_confirmation, class: 'form-control' %>
+          </div>
+        <br>
+        <div class="actions">
+          <%= form.submit "Sign Up" , class:"btn btn-primary btn-block"%>
+        </div>
+      <% end %>
+      </article>
+    </div>
+    <div class="col">
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password, id: :user_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
