@@ -5,8 +5,8 @@
     </div>
     <div class="col-4 card">
       <article class="card-body">
-      <h4 class="card-title mb-4 mt-1">Nombre de la historia</h4>
-      <p> Contenido </p>
+      <h4 class="card-title mb-4 mt-1"><%= @event.name%></h4>
+      <p> <%= @event.descritption%> </p>
       </article>
     </div>
     <div class="col-6">
@@ -15,8 +15,7 @@
           <div class="carousel-item active">
             <%= image_tag( "chicago.jpg", :class => "d-block w-100")%>
             <div class="carousel-caption d-none d-md-block">
-          <h5>Mi primer concierto</h5>
-          <p>Una experiencia unica en Chicago</p>
+          <h5><%= @event.name%></h5>
         </div>
           </div>
           <div class="carousel-item">
