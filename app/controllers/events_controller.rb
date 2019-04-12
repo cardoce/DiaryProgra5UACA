@@ -17,6 +17,8 @@ class EventsController < ApplicationController
   end
   def show
   end
+  def edit
+  end
   private
   def event_parms
     params.require(:event).permit(:user_id, :name, :event_date, :event_picture_url, :descritption)
