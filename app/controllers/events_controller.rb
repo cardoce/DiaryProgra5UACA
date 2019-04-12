@@ -2,6 +2,9 @@ class EventsController < ApplicationController
   def index
     @events = Event.where(user_id: current_user.id)
   end
+  def publicindex
+    @events = Event.where.not(user_id: current_user.id, public: false)
+  end
   def new
     @event = Event.new
 
