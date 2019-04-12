@@ -23,6 +23,16 @@ class EventsController < ApplicationController
   end
   def edit
   end
+  def update
+    respond_to do |format|
+      if @event.update(event_parms)
+        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+      else
+        format.html { render :edit }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   private
   def set_event
     @event= Event.find(params[:id])

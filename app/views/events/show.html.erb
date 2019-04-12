@@ -7,6 +7,7 @@
       <article class="card-body">
       <h4 class="card-title mb-4 mt-1"><%= @event.name%></h4>
       <p> <%= @event.descritption%> </p>
+      <%= button_to 'Editar', edit_event_path(@event),class: "btn btn-outline-secondary", :method => :get %>
       </article>
     </div>
     <div class="col-6">
